@@ -18,3 +18,9 @@ if ($serialNumber -ne $null) {
 }
 
 Get-WindowsAutopilotInfo -OutputFile $filename
+
+# Open the CSV file in Notepad
+Start-Process -FilePath "notepad.exe" -ArgumentList "$filename"
+
+# Copy the contents to the clipboard
+Get-Content -Path "$filename" | Set-Clipboard
