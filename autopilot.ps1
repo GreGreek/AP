@@ -5,7 +5,7 @@ $env:Path += ";C:\Program Files\WindowsPowerShell\Scripts"
 
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
 
-Install-Script -Name Get-WindowsAutopilotInfo
+Install-Script -Name Get-WindowsAutopilotInfo -Force
 
 # Get the serial number of the computer
 $serialNumber = (Get-WmiObject -Class Win32_BIOS).SerialNumber
