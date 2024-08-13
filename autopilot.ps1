@@ -17,7 +17,10 @@ if ($serialNumber -ne $null) {
     $filename = "AutopilotHWID.csv"
 }
 
-Get-WindowsAutopilotInfo -OutputFile $filename
+# Prompt the user to enter the GroupTag
+$groupTag = Read-Host -Prompt "Please enter the GroupTag"
+
+Get-WindowsAutopilotInfo -OutputFile $filename -GroupTag $groupTag
 
 # Open the CSV file in Notepad
 Start-Process -FilePath "notepad.exe" -ArgumentList "$filename"
